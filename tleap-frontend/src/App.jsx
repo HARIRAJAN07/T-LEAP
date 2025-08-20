@@ -1,8 +1,11 @@
 import React from 'react'
+import Subjects from './components/dashboard/subjects'
 
 const App = () => {
   return (
-    <div>App</div>
+    <div>
+      <Subjects />
+    </div>
   )
 }
 
