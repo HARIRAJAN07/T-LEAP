@@ -1,21 +1,18 @@
 // QuizType.jsx
 import React, { useState } from "react";
+import Button from "@mui/material/Button";
 
 export default function QuizType() {
-  
-  const buttonStyle={
-                padding: "1% 2%",
-                borderRadius: "10px",
-                border: "none",
-                fontSize: "1.8rem",
-                background: "#f1f5f9",
-                color: "#111827",
-                cursor: "pointer",
-                fontWeight: "700",
-                boxShadow:"0 1px 4px rgba(0,0,0,0.3)",
-                width:"70%",
-                marginBottom:"4%"
-              }
+  const buttonStyle = {
+              fontWeight: "700",
+              boxShadow: "0 1px 4px rgba(0,0,0,0.3)",
+              width: "70%",
+              marginBottom: "4%",
+              cursor: "pointer",
+              fontSize: "3vh",
+              padding: "1% 2%",
+              borderRadius: "10px",
+            };
   return (
     <div
       style={{
@@ -39,7 +36,7 @@ export default function QuizType() {
       >
         <h1
           style={{
-            fontSize: "40px",
+            fontSize: "4vh",
             fontWeight: "bold",
             marginBottom: "4.5%",
             color: "#4f46e5",
@@ -48,7 +45,6 @@ export default function QuizType() {
           Question Type
         </h1>
 
-        
         <div
           style={{
             display: "flex",
@@ -58,14 +54,13 @@ export default function QuizType() {
             flexWrap: "wrap",
           }}
         >
-            <button style={buttonStyle}>Multiple Choice Question</button>
-            <button style={buttonStyle}>Match the Following</button>
-            <button style={buttonStyle}>Assertion & Reason</button>
-            <button style={buttonStyle}>True or False</button>
-            <button style={buttonStyle}>Fill in the Blanks</button>
-        </div>
+          <Button style={buttonStyle} variant="outlined" sx={{color:"#000000"}}>Multiple Choice Question</Button>
+          <Button style={buttonStyle} variant="outlined" sx={{color:"#000000"}}>Match the Following</Button>
+          <Button style={buttonStyle} variant="outlined" sx={{color:"#000000"}}>Assertion & Reason</Button>
+          <Button style={buttonStyle} variant="outlined" sx={{color:"#000000"}}>True or False</Button>
+          <Button style={buttonStyle} variant="outlined" sx={{color:"#000000"}}>Fill in the Blanks</Button>
         </div>
       </div>
-    
+    </div>
   );
 }
