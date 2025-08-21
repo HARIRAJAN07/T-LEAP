@@ -1,14 +1,19 @@
 import React from 'react'
-import Subjects from './components/dashboard/subjects'
 import Dashboard from './components/dashboard'
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import SubjectSelectionPage from "./components/Subjects/SubjectsSelectionPage";
+import TopicSelectionPage from "./components/Topics/TopicSelection";
 
-const App = () => {
+function App() {
   return (
-    <div>
-      {/* <Subjects /> */}
-      <Dashboard/>
-    </div>
-  )
+    <Router>
+      <Routes>
+        <Route path="/" element={<SubjectSelectionPage />} />
+        <Route path="/topics/:classId/:subject" element={<TopicSelectionPage />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+      </Routes>
+    </Router>
+  );
 }
 
-export default App
+export default App;
