@@ -1,13 +1,12 @@
 import React from 'react'
 import Subjects from './components/dashboard/subjects'
-import QuizType from './components/QuizType'
-
+import Dashboard from './components/dashboard'
 
 const App = () => {
   return (
     <div>
       {/* <Subjects /> */}
-      <QuizType />
+      <Dashboard/>
     </div>
   )
 }
