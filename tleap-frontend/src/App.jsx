@@ -1,10 +1,12 @@
 import React from 'react'
 import Subjects from './components/dashboard/subjects'
+import Dashboard from './components/dashboard'
 
 const App = () => {
   return (
     <div>
-      <Subjects />
+      {/* <Subjects /> */}
+      <Dashboard/>
     </div>
   )
 }
