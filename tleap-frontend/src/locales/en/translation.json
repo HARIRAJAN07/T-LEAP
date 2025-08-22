@@ -1,0 +1,8 @@
+{
+  "quizTypeTitle": "Question Type",
+  "mcq": "Multiple Choice Question",
+  "match": "Match the Following",
+  "assertion": "Assertion & Reason",
+  "trueFalse": "True or False",
+  "fillBlanks": "Fill in the Blanks"
+}
