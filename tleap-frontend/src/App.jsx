@@ -1,19 +1,25 @@
-import React from 'react'
-import Dashboard from './components/dashboard'
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import Dashboard from "./components/Dashboard";
 import SubjectSelectionPage from "./components/Subjects/SubjectsSelectionPage";
 import TopicSelectionPage from "./components/Topics/TopicSelection";
+import DifficultySelectionPage from "./components/DifficultySelectionPage";
+import QuizType from "./components/QuizType";
+import ModeSelectionPage from "./components/ModeSelectionPage";
+import QuestionPage from "./components/QuestionPage";
 
-function App() {
+export default function App() {
   return (
-    <Router>
+    <BrowserRouter>
       <Routes>
-        <Route path="/" element={<SubjectSelectionPage />} />
+        <Route path="/" element={<Dashboard />} />
+        <Route path="/subjects/:classId" element={<SubjectSelectionPage />} />
         <Route path="/topics/:classId/:subject" element={<TopicSelectionPage />} />
-        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/difficulty/:classId/:subject/:topic" element={<DifficultySelectionPage />} />
+        <Route path="/quiz-type/:classId/:subject/:topic/:difficulty" element={<QuizType />} />
+        <Route path="/mode/:classId/:subject/:topic/:difficulty/:questionType" element={<ModeSelectionPage />} />
+        <Route path="/quiz/:classId/:subject/:topic/:difficulty/:questionType/:mode" element={<QuestionPage />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
-    </Router>
+    </BrowserRouter>
   );
 }
-
-export default App;

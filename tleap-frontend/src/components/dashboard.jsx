@@ -1,5 +1,6 @@
 import React from 'react';
 import { Card, CardContent, Typography } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 
 const baseCardStyle = {
   background: 'linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%)',
@@ -16,12 +17,14 @@ const baseCardStyle = {
 };
 
 const Dashboard = () => {
+  const navigate = useNavigate();
+
   const handleMouseEnter = (e) => {
     e.currentTarget.style.transform = 'translateY(-10px) scale(1.04)';
     e.currentTarget.style.boxShadow =
       '0 18px 40px rgba(0,0,0,0.25), 0 24px 60px rgba(0,0,0,0.18)';
     e.currentTarget.style.background =
-      'linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%)'; // bright gradient
+      'linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%)';
   };
 
   const handleMouseLeave = (e) => {
@@ -29,6 +32,10 @@ const Dashboard = () => {
     e.currentTarget.style.boxShadow = '0 6px 18px rgba(0,0,0,0.12)';
     e.currentTarget.style.background =
       'linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%)';
+  };
+
+  const handleSelectClass = (cls) => {
+    navigate(`/subjects/${cls}`);
   };
 
   return (
@@ -45,7 +52,6 @@ const Dashboard = () => {
         overflow: 'hidden',
       }}
     >
-      {/* Title */}
       <div style={{ marginBottom: '3%', textAlign: 'center' }}>
         <h1
           style={{
@@ -70,7 +76,6 @@ const Dashboard = () => {
         </p>
       </div>
 
-      {/* Top row - 4 cards */}
       <div
         style={{
           display: 'grid',
@@ -88,6 +93,7 @@ const Dashboard = () => {
             style={baseCardStyle}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
+            onClick={() => handleSelectClass(num)}
           >
             <CardContent>
               <Typography
@@ -105,7 +111,6 @@ const Dashboard = () => {
         ))}
       </div>
 
-      {/* Bottom row - 3 cards centered */}
       <div
         style={{
           display: 'grid',
@@ -122,6 +127,7 @@ const Dashboard = () => {
             style={baseCardStyle}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
+            onClick={() => handleSelectClass(num)}
           >
             <CardContent>
               <Typography

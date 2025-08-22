@@ -1,14 +1,5 @@
-// src/components/SubjectSelectionPage.jsx
-import React from 'react';
-
-// Placeholder for your navigation logic.
-// You would likely use a routing library like react-router-dom here.
-const handleSelectSubject = (subject) => {
-  console.log(`Navigating to the next page for ${subject}.`);
-  // Example with react-router-dom:
-  // const navigate = useNavigate();
-  // navigate(`/select-topic/${subject}`);
-};
+import React from "react";
+import { useNavigate, useParams } from "react-router-dom";
 
 const subjects = [
   { name: 'Science', icon: '🔬', color: 'bg-green-500' },
@@ -19,10 +10,15 @@ const subjects = [
 ];
 
 const SubjectSelectionPage = () => {
+  const navigate = useNavigate();
+  const { classId } = useParams();
+
+  const handleSelectSubject = (subject) => {
+    navigate(`/topics/${classId}/${encodeURIComponent(subject)}`);
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-indigo-100 to-purple-200 flex flex-col items-center justify-center py-12 px-4">
-      
-      {/* Page Title and Description */}
       <h1 className="text-5xl md:text-6xl font-extrabold text-center text-gray-900 mb-4 drop-shadow-md">
         Choose Your Subject
       </h1>
@@ -30,7 +26,6 @@ const SubjectSelectionPage = () => {
         Select a subject to test your knowledge and begin your quiz!
       </p>
 
-      {/* This is the new, correctly structured section */}
       <div className="flex justify-center w-full"> 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-12">
           {subjects.map((subject) => (
@@ -41,8 +36,6 @@ const SubjectSelectionPage = () => {
               <div 
                 className="relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]"
               >
-                
-                {/* Front of the card */}
                 <div 
                   className={`absolute inset-0 ${subject.color} rounded-3xl shadow-2xl flex flex-col items-center justify-center [backface-visibility:hidden] p-6 transition-all duration-300 group-hover:shadow-3xl`}
                 >
@@ -53,8 +46,7 @@ const SubjectSelectionPage = () => {
                     {subject.name}
                   </h2>
                 </div>
-                
-                {/* Back of the card */}
+
                 <div 
                   className="absolute inset-0 bg-white rounded-3xl shadow-2xl flex flex-col items-center justify-center [transform:rotateY(180deg)] [backface-visibility:hidden] p-6 text-gray-800 transition-all duration-300 group-hover:shadow-3xl"
                 >
@@ -64,13 +56,13 @@ const SubjectSelectionPage = () => {
                   <p className="text-lg text-center mb-6">
                     Click the button to continue with {subject.name}.
                   </p>
-<button
-  onClick={() => handleSelectSubject(subject.name)}
-  className="px-8 py-3 bg-[#c5baff] font-bold rounded-full shadow-lg hover:bg-[#b6a3ff] transition-colors transform hover:scale-105"
-  style={{ color: '#2c2c2c' }}
->
-  Choose topic
-</button>
+                  <button
+                    onClick={() => handleSelectSubject(subject.name)}
+                    className="px-8 py-3 bg-[#c5baff] font-bold rounded-full shadow-lg hover:bg-[#b6a3ff] transition-colors transform hover:scale-105"
+                    style={{ color: '#2c2c2c' }}
+                  >
+                    Choose topic
+                  </button>
                 </div>
               </div>
             </div>
