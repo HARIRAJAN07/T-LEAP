@@ -1,72 +1,56 @@
 import React from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import Button from "@mui/material/Button";
+
+const questionTypes = [
+  { key: "mcq", label: "Multiple Choice", emoji: "📝", desc: "Pick the correct option" },
+  { key: "match", label: "Match the Following", emoji: "🔗", desc: "Pair items correctly" },
+  { key: "assertion", label: "Assertion & Reason", emoji: "🤔", desc: "Decide if reasoning fits" },
+  { key: "truefalse", label: "True or False", emoji: "✔️❌", desc: "Simple but tricky" },
+  { key: "fill", label: "Fill in the Blanks", emoji: "✍️", desc: "Complete the sentences" },
+];
 
 export default function QuizType() {
   const navigate = useNavigate();
   const { classId, subject, topic, difficulty } = useParams();
 
-  const buttonStyle = {
-    fontWeight: "700",
-    boxShadow: "0 1px 4px rgba(0,0,0,0.3)",
-    width: "70%",
-    marginBottom: "4%",
-    cursor: "pointer",
-    fontSize: "3vh",
-    padding: "1% 2%",
-    borderRadius: "10px",
-  };
-
   const goNext = (typeKey) => {
-    navigate(`/mode/${classId}/${encodeURIComponent(subject)}/${encodeURIComponent(topic)}/${encodeURIComponent(difficulty)}/${typeKey}`);
+    navigate(
+      `/mode/${classId}/${encodeURIComponent(subject)}/${encodeURIComponent(
+        topic
+      )}/${encodeURIComponent(difficulty)}/${typeKey}`
+    );
   };
 
   return (
-    <div
-      style={{
-        width: "100%",
-        minHeight: "100vh",
-        background: "linear-gradient(to right, #eef2ff, #f8fafc)",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <div
-        style={{
-          width: "60%",
-          background: "white",
-          borderRadius: "20px",
-          padding: "1%",
-          boxShadow: "0 4px 20px rgba(0,0,0,0.1)",
-          textAlign: "center",
-        }}
-      >
-        <h1
-          style={{
-            fontSize: "4vh",
-            fontWeight: "bold",
-            marginBottom: "4.5%",
-            color: "#4f46e5",
-          }}
-        >
-          Question Type
-        </h1>
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#c5baff] via-[#c4d9ff] to-[#e8f9ff] p-8">
+      <div className="bg-[#fbfbfb] rounded-3xl shadow-2xl p-12 w-full max-w-6xl">
+        {/* Heading */}
+        <h2 className="text-5xl font-extrabold text-center text-black mb-4 drop-shadow-sm">
+          Select Question Type
+        </h2>
+        <p className="text-lg text-gray-700 text-center mb-12">
+          Choose how you want to test your knowledge.
+        </p>
 
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            gap: "2%",
-            marginBottom: "5%",
-            flexWrap: "wrap",
-          }}
-        >
-          <Button style={buttonStyle} variant="outlined" sx={{color:"#000000"}} onClick={() => goNext('mcq')}>Multiple Choice Question</Button>
-          <Button style={buttonStyle} variant="outlined" sx={{color:"#000000"}} onClick={() => goNext('match')}>Match the Following</Button>
-          <Button style={buttonStyle} variant="outlined" sx={{color:"#000000"}} onClick={() => goNext('assertion')}>Assertion & Reason</Button>
-          <Button style={buttonStyle} variant="outlined" sx={{color:"#000000"}} onClick={() => goNext('truefalse')}>True or False</Button>
-          <Button style={buttonStyle} variant="outlined" sx={{color:"#000000"}} onClick={() => goNext('fill')}>Fill in the Blanks</Button>
+        {/* Cards Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+          {questionTypes.map((q) => (
+            <button
+              key={q.key}
+              onClick={() => goNext(q.key)}
+              className="relative rounded-2xl border-2 border-transparent px-8 py-12 
+              bg-gradient-to-br from-[#e8f9ff] to-[#c4d9ff] 
+              hover:from-[#c5baff] hover:to-[#c4d9ff] 
+              transition-all duration-300 transform hover:scale-105 hover:shadow-2xl text-center"
+            >
+              <div className="text-5xl mb-4">{q.emoji}</div>
+              <div className="text-2xl font-bold text-gray-800">{q.label}</div>
+              <div className="text-gray-600 mt-3 text-lg">{q.desc}</div>
+
+              {/* Decorative glowing circle */}
+              <div className="absolute -top-4 -right-4 w-8 h-8 rounded-full bg-[#c5baff] animate-pulse"></div>
+            </button>
+          ))}
         </div>
       </div>
     </div>
