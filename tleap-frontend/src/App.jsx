@@ -5,6 +5,7 @@ import TopicSelectionPage from "./components/Topics/TopicSelection";
 import DifficultySelectionPage from "./components/DifficultySelectionPage";
 import QuizType from "./components/QuizType";
 import ModeSelectionPage from "./components/ModeSelectionPage";
+import LanguageSelectionPage from "./components/LanguageSelectionPage";
 import QuestionPage from "./components/QuestionPage";
 
 export default function App() {
@@ -17,7 +18,13 @@ export default function App() {
         <Route path="/difficulty/:classId/:subject/:topic" element={<DifficultySelectionPage />} />
         <Route path="/quiz-type/:classId/:subject/:topic/:difficulty" element={<QuizType />} />
         <Route path="/mode/:classId/:subject/:topic/:difficulty/:questionType" element={<ModeSelectionPage />} />
-        <Route path="/quiz/:classId/:subject/:topic/:difficulty/:questionType/:mode" element={<QuestionPage />} />
+        
+        {/* New language selection step */}
+        <Route path="/language/:classId/:subject/:topic/:difficulty/:questionType/:mode" element={<LanguageSelectionPage />} />
+        
+        {/* Quiz now has language param */}
+        <Route path="/quiz/:classId/:subject/:topic/:difficulty/:questionType/:mode/:language" element={<QuestionPage />} />
+        
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>
