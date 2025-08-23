@@ -17,30 +17,41 @@ const TopicSelectionPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-purple-100 flex flex-col items-center py-12 px-6">
-      <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4 drop-shadow-md text-center">
-        Choose a Topic
-      </h1>
-      <p className="text-lg md:text-xl text-gray-600 mb-10 text-center max-w-2xl">
-        Select a topic in <span className="font-semibold capitalize">{subject}</span> 
-        for Class <span className="font-semibold">{classId}</span> to continue.
-      </p>
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#c5baff] via-[#c4d9ff] to-[#e8f9ff] p-8">
+      <div className="bg-[#fbfbfb] rounded-3xl shadow-2xl p-12 w-full max-w-5xl">
+        {/* Heading */}
+        <h1 className="text-5xl font-extrabold text-black mb-4 text-center drop-shadow-sm">
+          📚 Choose a Topic
+        </h1>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 w-full max-w-4xl">
-        {topics.length > 0 ? (
-          topics.map((topic, index) => (
-            <button
-              key={index}
-              onClick={() => goNext(topic)}
-              className="flex items-center gap-4 px-6 py-4 bg-white rounded-xl shadow-md border border-gray-200 hover:shadow-lg hover:bg-[#c5baff] hover:text-gray-900 transition-all transform hover:scale-105"
-            >
-              <span className="text-2xl">📘</span>
-              <span className="text-lg font-semibold">{topic}</span>
-            </button>
-          ))
-        ) : (
-          <p className="text-gray-500">No topics available for this subject.</p>
-        )}
+        {/* Subtitle */}
+        <p className="text-lg text-gray-700 text-center mb-12">
+          Select a topic in{" "}
+          <span className="font-bold capitalize">{subject}</span> for Class{" "}
+          <span className="font-bold">{classId}</span> and start learning in style! 🚀
+        </p>
+
+        {/* Cards Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-7">
+          {topics.length > 0 ? (
+            topics.map((topic, index) => (
+              <button
+                key={index}
+                onClick={() => goNext(topic)}
+                className="flex items-center gap-4 px-6 py-5 bg-white rounded-2xl shadow-md border border-gray-200 
+                hover:shadow-xl hover:bg-[#c5baff] hover:text-gray-900 
+                transition-all transform hover:scale-105"
+              >
+                <span className="text-3xl">📘</span>
+                <span className="text-lg font-semibold">{topic}</span>
+              </button>
+            ))
+          ) : (
+            <p className="text-gray-500 text-center col-span-full">
+              No topics available for this subject.
+            </p>
+          )}
+        </div>
       </div>
     </div>
   );

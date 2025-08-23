@@ -27,7 +27,7 @@
       "Supplementary : Gulliver’s Travels",
       "Grammar : Tense"
     ],
-    "maths": [
+    "math": [
       "Place Value Chart",
       "Indian Method",
       "International Method",
@@ -53,7 +53,7 @@
       "Pure Substances and mixtures",
       "Separation mixtures –Filtering, Sedimentation"
     ],
-    "social": [
+    "social studies": [
       "Stages of Human Evolution (Infographics) Hunting and food gathering",
       "Stone Tools and Weapons",
       "The planets at a glance (Infographics)",
@@ -89,7 +89,7 @@
       "Poem : The Poem of adventure",
       "Grammar : Adjectives"
     ],
-    "maths": [
+    "math": [
       "Addition of Integers",
       "Properties of Addition",
       "Subtraction of Integers",
@@ -117,7 +117,7 @@
       "Stability",
       "Condition for stability"
     ],
-    "social": [
+    "social studies": [
       "Inscription",
       "Religious Literature",
       "Secular Literature",
@@ -158,7 +158,7 @@
       "Poem : A Thing of Beauty",
       "Grammar : Conjunctions/Connectors"
     ],
-    "maths": [
+    "math": [
       "Parts of a circle",
       "Length of the Arc and Area of the Sector",
       "Perimeter of a Sector",
@@ -186,7 +186,7 @@
       "Pressure",
       "Pressure exerted by Air"
     ],
-    "social": [
+    "social studies": [
       "Sources of Modern India",
       "Kinds of sources",
       "Advent of the Europeans",
@@ -224,7 +224,7 @@
       "Poem  : The Spider and the Fly",
       "Grammar : Phrasal Verbs"
     ],
-    "maths": [
+    "math": [
       "Set",
       "Representation of a set",
       "Types of sets",
@@ -252,7 +252,7 @@
       "Types of tropism",
       "Nastic movements"
     ],
-    "social": [
+    "social studies": [
       "Origin of the earth and geological ages",
       "Human enquiries into the past and origin of the world",
       "Pre-Historic Tamilagam",
@@ -266,7 +266,25 @@
     ]
   },
   "class10": {
-    "tamil": [],
+    "tamil": [
+      "அன்்னனை மொொழியே",
+      "அமுதஊற்று",
+      "தமிழ்்சச்்சசொல் வளம்",
+      "இரட்டுற மொொழிதல்",
+      "உரைநடையின் அணிநலன்்கள்",
+      "எழுத்து, சொொல்",
+      "கேட்கிறதா என்குரல்!",
+      "உயிரின் ஓசை",
+      "காற்்றறே வா!",
+      "முல்்லலைப்்பபாட்டு*",
+      "புயலிலே ஒரு தோோணி",
+      "தொொகைநிலைத் தொொடர்்கள்",
+      "பண்்பபாடு விருந்து போோற்றுதும்!",
+      "கூட்்டடாஞ்சோறு",
+      "காசிக்்ககாண்்டம்",
+      "மலைபடுகடாம்",
+      "கோோபல்்லபுரத்து மக்்கள்"
+    ],
     "english": [
       "Prose : His First Flight",
       "Poem : Life",
@@ -279,7 +297,7 @@
       "Poem : I am Every woman",
       "Grammar : Tense"
     ],
-    "maths": [
+    "math": [
       "Ordered Pair",
       "Cartesian Product",
       "Relations",
@@ -305,7 +323,7 @@
       "Newton’s Third Law of Motion",
       "Rocket propulsion"
     ],
-    "social": [
+    "social studies": [
       "Scramble for colonies",
       "Rivalry of Great Powers",
       "Causes, Course and Result of World War I",
