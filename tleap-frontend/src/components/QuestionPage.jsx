@@ -4,7 +4,7 @@ import { useParams, useNavigate } from "react-router-dom";
 const API_BASE = import.meta.env.VITE_API_URL || "http://localhost:5000";
 
 export default function QuestionPage() {
-  const { classId, subject, topic, difficulty, questionType, mode } = useParams();
+  const { classId, subject, topic, difficulty, questionType, mode,language } = useParams();
   const isPractice = mode === 'practice';
   const navigate = useNavigate();
 
@@ -21,9 +21,15 @@ export default function QuestionPage() {
     subject,
     difficulty,
     topicHint: decodeURIComponent(topic),
+<<<<<<< Updated upstream
     language: "English", // adjust if you add language selection
     questionType: questionType, // 'mcq' | 'fill' | 'assertion' | 'truefalse' | 'match' | 'mix'
   }), [classId, subject, difficulty, topic, questionType]);
+=======
+    language,
+    questionType: questionType,
+  }), [classId, subject, difficulty, topic, questionType,language]);
+>>>>>>> Stashed changes
 
   const fetchQuestion = useCallback(async () => {
     try {

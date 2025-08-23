@@ -6,7 +6,15 @@ const ModeSelectionPage = () => {
   const { classId, subject, topic, difficulty, questionType } = useParams();
 
   const go = (mode) => {
+<<<<<<< Updated upstream
     navigate(`/quiz/${classId}/${encodeURIComponent(subject)}/${encodeURIComponent(topic)}/${encodeURIComponent(difficulty)}/${questionType}/${mode}`);
+=======
+    navigate(
+      `/language/${classId}/${encodeURIComponent(subject)}/${encodeURIComponent(
+        topic
+      )}/${encodeURIComponent(difficulty)}/${questionType}/${mode}`
+    );
+>>>>>>> Stashed changes
   };
 
   return (
